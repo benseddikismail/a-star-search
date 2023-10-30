@@ -21,6 +21,8 @@ The space delimited fields are:
 - speed limit (in miles per hour)
 - name of highway
 
+> Note that there are mistakes and bugs in the dataset; e.g. not all cities that appear in road-segments.txt have a corresponding line in city-gps.txt.
+
 #### Run
 ```console
 ismail@ismail:~$ python3 ./route.py [start-city] [end-city] [cost-function]
