@@ -1,14 +1,10 @@
 # A* Search
 
 A* search finds the shortest path between 2 cities given one of the following cost functions:
-
 - segments: find a route with the fewest number of road segments (i.e. edges of the graph).
-
 - distance: find a route with the shortest total distance.
-
-- time: finds the fastest route, assuming one drives the speed limit.
-
-- delivery: finds the fastest route, in expectation, for a certain delivery driver. Whenever this driver drives on a road with a speed limit ≥ 50 mph, there is a chance that a package will fall out of their truck and be destroyed. They will have to drive to the end of that road, turn around, return to the start city to get a replacement, then drive all the way back to where they were (they won’t make the same mistake the second time they drive on that road).
+- time: find the fastest route, assuming one drives the speed limit.
+- delivery: find the fastest route, in expectation, for a certain delivery driver. Whenever this driver drives on a road with a speed limit ≥ 50 mph, there is a chance that a package will fall out of their truck and be destroyed. They will have to drive to the end of that road, turn around, return to the start city to get a replacement, then drive all the way back to where they were (they won’t make the same mistake the second time they drive on that road).
 Consequently, this mistake will add an extra 2·(t<sub>road</sub>+t<sub>trip</sub>) hours to their trip, where t<sub>trip</sub> is the time it took to get from the start city to the beginning of the road, and t<sub>road</sub> is the time it takes to drive the length of the road segment. 
 For a road of length _L_ miles, the probability p of the mistake is equal to tanh(_L_/1000) if the speed limit is ≥ 50 mph, and 0 otherwise.This means that, in expectation, it will take t<sub>road</sub> + 2·p·(t<sub>road</sub>+t<sub>trip</sub>) hours to drive on this road.
 
